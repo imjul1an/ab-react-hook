@@ -27,7 +27,7 @@
   <br />
   <br />
   <br />
-  <pre>yarn add <a href=" https://yarnpkg.com/en/package/use-experiment">use-experiment</a></pre>
+  <pre>yarn add <a href="https://yarnpkg.com/en/package/use-experiment">use-experiment</a></pre>
   <br />
   <br />
   <br />
