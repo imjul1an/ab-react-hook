@@ -2,7 +2,7 @@
   <h1>
     <br/>
     <br/>
-    🧪
+    ❤️ or 💙
     <br/>
     use-experiment
     <br />
