@@ -1,5 +1,6 @@
 version: 2
-
+orbs:
+  codecov: codecov/codecov@3.5.0
 refs:
   container: &container
     docker:
@@ -25,7 +26,10 @@ refs:
     - &Test
       run:
         name: Test
-        command: yarn test
+        command: yarn test --coverage
+    - codecov/upload:
+        file: 'coverage/coveragfe-final.json'
+
 
 jobs:
   all:
