@@ -7,8 +7,6 @@
     use-experiment
     <br />
     <br />
-    <br />
-    <br />
   </h1>
   <sup>
     <br />
@@ -25,18 +23,10 @@
     <br />
   </sup>
   <br />
-  <br />
-  <br />
   <pre>yarn add <a href="https://yarnpkg.com/en/package/use-experiment">use-experiment</a></pre>
   <br />
-  <br />
-  <br />
 </div>
-<br />
-<br />
-<br />
-<br />
-<br />
+
 <br />
 <br />
 
