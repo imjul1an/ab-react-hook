@@ -1,6 +1,6 @@
 {
   "name": "use-experiment",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "A/B-Testing React Hook",
   "author": "Julian Ustiyanovych",
   "license": "MIT",
