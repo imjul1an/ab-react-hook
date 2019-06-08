@@ -41,6 +41,7 @@ jobs:
       - *Build
       - *Test
       - *Lint
+      - codecov/upload
 
   next:
     <<: *container
@@ -51,6 +52,7 @@ jobs:
       - *Build
       - *Test
       - *Lint
+      - codecov/upload
 
   master:
     <<: *container
@@ -61,6 +63,7 @@ jobs:
       - *Build
       - *Test
       - *Lint
+      - codecov/upload
 
 workflows:
   version: 2
