@@ -4,7 +4,7 @@
     <br/>
     A/B
     <br/>
-    Ex-Hooks
+    Experiment Hooks
     <br />
     <br />
   </h1>
