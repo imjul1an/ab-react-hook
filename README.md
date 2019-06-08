@@ -20,7 +20,7 @@
       <img src="https://img.shields.io/circleci/project/ju1i4n/use-experiment/master.svg" alt="CircleCI master" />
     </a>
     <a href="https://codecov.io/gh/ju1i4n/use-experiment">
-      <img src="https://codecov.io/gh/ju1i4n/use-experiment/branch/master/graph/badge.svg"/>
+      <img src="https://codecov.io/gh/ju1i4n/use-experiment/branch/master/graph/badge.svg" />
     </a>
     <br />
   </sup>
