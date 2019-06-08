@@ -4,7 +4,7 @@
     <br/>
     🧪
     <br/>
-    useExperiment
+    use-experiment
     <br />
     <br />
     <br />
