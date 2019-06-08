@@ -30,7 +30,7 @@
 <br />
 <br />
 
-### ```useExperiment()```:
+### 🧪 ```useExperiment()```:
 
 ```js
 const AddToCartButtonExperiment = () => {
@@ -52,7 +52,7 @@ const AddToCartButtonExperiment = () => {
 }
 ```
 
-### ```useExperimentAsyc()``` (not implemented yet):
+### 🧪 ```useExperimentAsyc()``` (not implemented yet):
 ```js
 const AddToCartButtonExperiment = () => {
   const experimentConfig = {
