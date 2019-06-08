@@ -33,11 +33,14 @@ const useExperiment = (
       } as RandomizerOptions,
       logger
     );
+    setLoading(true); // will be removed soon, as of now we keep it to be consistent with prev API
 
     setVariant(variant);
+
+    setLoading(false); // will be removed soon, as of now we keep it to be consistent with prev API
   }, [id, name, variants, fetchVariant, fallbackVariant, logger]);
 
-  return { variant, isLoading } as ExperimentResult;
+  return { variant, isLoading };
 };
 
 export default useExperiment;
