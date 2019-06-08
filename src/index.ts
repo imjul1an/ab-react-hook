@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import {
   generateWeightedVariant,
-  Variant,
-  RandomizerOptions
+  RandomizerOptions,
+  Variant
 } from "./randomizer";
 
 export interface ExperimentOptions extends RandomizerOptions {

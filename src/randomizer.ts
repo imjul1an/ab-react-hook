@@ -5,20 +5,20 @@ export const NONE_VARIANT = "noneVariant";
 export interface Variant {
   name: string;
   weight: number;
-};
+}
 
 export interface RandomizerOptions {
-  id: string,
-  name: string,
-  variants: Array<Variant>
+  id: string;
+  name: string;
+  variants: Variant[];
 }
 
 export interface NoneVariant {
-  name: string
+  name: string;
 }
 
 export const generateWeightedVariant = (
-  options: RandomizerOptions, 
+  options: RandomizerOptions,
   logger: any = console
 ): Variant => {
   const { id, name, variants } = options;
@@ -68,7 +68,7 @@ export const generateWeightedVariant = (
 const findVariant = (
   currentBucket: number,
   initialBucket: number,
-  variants: Array<Variant>,
+  variants: Variant[],
   logger: any = console
 ): Variant => {
   if (variants.length === 0) {
@@ -81,5 +81,5 @@ const findVariant = (
 
   return initialBucket < currentBucket + variant.weight || !variants.length
     ? variant
-    : findVariant(currentBucket + variant.weight, initialBucket, variants, logger)
+    : findVariant(currentBucket + variant.weight, initialBucket, variants, logger);
 };
