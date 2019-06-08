@@ -30,7 +30,7 @@
 <br />
 <br />
 
-<h2>An example of the experiment:</h2>
+### ```useExperiment()```:
 
 ```js
 const AddToCartButtonExperiment = () => {
@@ -51,6 +51,39 @@ const AddToCartButtonExperiment = () => {
   )
 }
 ```
+
+### ```useExperimentAsyc()``` (not implemented yet):
+```js
+const AddToCartButtonExperiment = () => {
+  const experimentConfig = {
+    id: "3143106098",
+    name: "add-to-cart-green",
+    fetchVariant: () => {
+      // let's assume we call our experiment API that returns variant.
+      return new Promise((resolve, reject) => {
+        setTimeout(() => {
+          // shoud return an object of { name: string, weight: number }.
+          resolve({ name: "control", weight: 50 })
+        }, 2000)
+    })
+  }
+ 
+  const { variant: { name }, isLoading } = useExperimentAsync(experimentConfig)
+  
+  if (isLoading) {
+    return <LoadingSpinner />
+  }
+
+  return (
+    if (name === "control") {
+       <button class="black">Add to cart</button>
+    } else if (name === "test") {
+       <button class="green">Add to cart</button>
+    }
+  )
+}
+```
+
 
 <br />
 <br />
