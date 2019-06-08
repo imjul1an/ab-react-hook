@@ -2,8 +2,7 @@
   <h1>
     <br/>
     <br/>
-    <span color="red">A</span>
-    <span color="blue">B</span>
+    A/B
     <br/>
     use-experiment
     <br />
