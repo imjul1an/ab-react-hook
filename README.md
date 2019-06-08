@@ -30,6 +30,30 @@
 <br />
 <br />
 
+<h2>An example of the experiment:</h2>
+
+```js
+const AddToCartButtonExperiment = () => {
+  const experimentConfig = {
+    id: "3143106098",
+    name: "add-to-cart-green",
+    variants: [{ name: "control", weight: 50 }, { name: "test", weight: 50 }]
+  };
+ 
+  const { variant: { name } } = useExperiment(experimentConfig)
+
+  return (
+    if (name === "control") {
+       <button class="black">Add to cart</button>
+    } else if (name === "test") {
+       <button class="green">Add to cart</button>
+    }
+  )
+}
+```
+
+<br />
+<br />
 <p align="center">
   <a href="./LICENSE"><strong>Unlicense</strong></a> &mdash; public domain.
 </p>
