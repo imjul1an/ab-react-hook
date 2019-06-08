@@ -1,37 +1,85 @@
-# Javascript Node CircleCI 2.0 configuration file
-#
-# Check https://circleci.com/docs/2.0/language-javascript/ for more details
-#
 version: 2
-jobs:
-  build:
+
+refs:
+  container: &container
     docker:
-      # specify the version you desire here
-      - image: circleci/node:v11.6.0
-
-      # Specify service dependencies here if necessary
-      # CircleCI maintains a library of pre-built images
-      # documented at https://circleci.com/docs/2.0/circleci-images/
-      # - image: circleci/mongo:3.4.4
-
+      - image: node:8.16
     working_directory: ~/repo
+  steps:
+    - &Versions
+      run:
+        name: Versions
+        command: node -v && npm -v && yarn -v
+    - &Install
+      run:
+        name: Install Dependencies
+        command: yarn install --pure-lockfile
+    - &Build
+      run:
+        name: Build
+        command: yarn build
+    - &Lint
+      run:
+        name: Lint
+        command: yarn lint
+    - &Test
+      run:
+        name: Test
+        command: yarn test
 
+jobs:
+  all:
+    <<: *container
     steps:
       - checkout
+      - *Versions
+      - *Install
+      - *Build
+      - *Test
+      - *Lint
 
-      # Download and cache dependencies
-      - restore_cache:
-          keys:
-            - v1-dependencies-{{ checksum "package.json" }}
-            # fallback to using the latest cache if no exact match is found
-            - v1-dependencies-
+  next:
+    <<: *container
+    steps:
+      - checkout
+      - *Versions
+      - *Install
+      - *Build
+      - *Test
+      - *Lint
 
-      - run: yarn install
+  master:
+    <<: *container
+    steps:
+      - checkout
+      - *Versions
+      - *Install
+      - *Build
+      - *Test
+      - *Lint
 
-      - save_cache:
-          paths:
-            - node_modules
-          key: v1-dependencies-{{ checksum "package.json" }}
-
-      # run tests!
-      - run: yarn test
+workflows:
+  version: 2
+  all:
+    jobs:
+      - all:
+          context: common-env-vars
+          filters:
+            branches:
+              ignore:
+                - master
+                - next
+  next:
+    jobs:
+      - next:
+          context: common-env-vars
+          filters:
+            branches:
+              only: next
+  master:
+    jobs:
+      - master:
+          context: common-env-vars
+          filters:
+            branches:
+              only: master
