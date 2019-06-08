@@ -27,11 +27,7 @@
   <br />
   <br />
   <br />
-  <br />
-  <pre>npm i <a href="https://www.npmjs.com/package/use-experiment">use-experiment</a></pre>
-  <br />
   <pre>yarn add <a href=" https://yarnpkg.com/en/package/use-experiment">use-experiment</a></pre>
-  <br />
   <br />
   <br />
   <br />
