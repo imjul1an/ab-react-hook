@@ -20,7 +20,7 @@
       <img src="https://img.shields.io/circleci/project/ju1i4n/use-experiment/master.svg" alt="CircleCI master" />
     </a>
     <a href="https://www.npmjs.com/package/use-experiment">
-      <img src="https://img.shields.io/npm/dm/use-experiment.svg" alt="npm downloads" />
+      <img src="https://img.shields.io/npm/v/use-experiment.svg" alt="npm downloads" />
     </a>
     <br />
   </sup>
