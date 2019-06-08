@@ -2,8 +2,8 @@
   <h1>
     <br/>
     <br/>
-    🧪 A/B
-    <br />
+    🧪
+    <br/>
     useExperiment
     <br />
     <br />
@@ -13,7 +13,6 @@
   <sup>
     <br />
     <br />
-    Collection of essential <a href="https://reactjs.org/docs/hooks-intro.html">React Hooks</a>.</em>
     <br />
   </sup>
   <br />
