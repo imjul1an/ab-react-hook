@@ -13,15 +13,37 @@
   <sup>
     <br />
     <br />
+    <a href="https://www.npmjs.com/package/use-experiment">
+      <img src="https://img.shields.io/npm/v/use-experiment.svg" alt="npm package" />
+    </a>
+    <a href="https://circleci.com/gh/ju1i4n/use-experiment">
+      <img src="https://img.shields.io/circleci/project/ju1i4n/use-experiment/master.svg" alt="CircleCI master" />
+    </a>
+    <a href="https://www.npmjs.com/package/use-experiment">
+      <img src="https://img.shields.io/npm/dm/use-experiment.svg" alt="npm downloads" />
+    </a>
     <br />
   </sup>
   <br />
   <br />
   <br />
   <br />
+  <pre>npm i <a href="https://www.npmjs.com/package/use-experiment">use-experiment</a></pre>
   <br />
+  <pre>yarn add <a href=" https://yarnpkg.com/en/package/use-experiment">use-experiment</a></pre>
   <br />
   <br />
   <br />
   <br />
 </div>
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+
+<p align="center">
+  <a href="./LICENSE"><strong>Unlicense</strong></a> &mdash; public domain.
+</p>
