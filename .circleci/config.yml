@@ -1,6 +1,4 @@
 version: 2
-orbs:
-  codecov: codecov/codecov@3.5.0
 refs:
   container: &container
     docker:
@@ -27,9 +25,6 @@ refs:
       run:
         name: Test
         command: yarn test --coverage
-    - codecov/upload:
-        file: 'coverage/coveragfe-final.json'
-
 
 jobs:
   all:
@@ -41,7 +36,6 @@ jobs:
       - *Build
       - *Test
       - *Lint
-      - codecov/upload
 
   next:
     <<: *container
@@ -52,7 +46,6 @@ jobs:
       - *Build
       - *Test
       - *Lint
-      - codecov/upload
 
   master:
     <<: *container
@@ -63,14 +56,13 @@ jobs:
       - *Build
       - *Test
       - *Lint
-      - codecov/upload
 
 workflows:
   version: 2
   all:
     jobs:
       - all:
-          # context: common-env-vars
+          context: global-env-vars
           filters:
             branches:
               ignore:
@@ -79,14 +71,14 @@ workflows:
   next:
     jobs:
       - next:
-          # context: common-env-vars
+          context: global-env-vars
           filters:
             branches:
               only: next
   master:
     jobs:
       - master:
-          # context: common-env-vars
+          context: global-env-vars
           filters:
             branches:
               only: master
