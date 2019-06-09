@@ -11,14 +11,14 @@
   <sup>
     <br />
     <br />
-    <a href="https://www.npmjs.com/package/use-experiment">
-      <img src="https://img.shields.io/npm/v/use-experiment.svg" alt="npm package" />
+    <a href="https://www.npmjs.com/package/xhooks">
+      <img src="https://img.shields.io/npm/v/xhooks.svg" alt="npm package" />
     </a>
-    <a href="https://circleci.com/gh/ju1i4n/use-experiment">
-      <img src="https://img.shields.io/circleci/project/ju1i4n/use-experiment/master.svg" alt="CircleCI master" />
+    <a href="https://circleci.com/gh/ju1i4n/xhooks">
+      <img src="https://img.shields.io/circleci/project/ju1i4n/xhooks/master.svg" alt="CircleCI master" />
     </a>
-    <a href="https://codecov.io/gh/ju1i4n/use-experiment">
-      <img src="https://codecov.io/gh/ju1i4n/use-experiment/branch/master/graph/badge.svg" />
+    <a href="https://codecov.io/gh/ju1i4n/xhooks">
+      <img src="https://codecov.io/gh/ju1i4n/xhooks/branch/master/graph/badge.svg" />
     </a>
     <br />
   </sup>
