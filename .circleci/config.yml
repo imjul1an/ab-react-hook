@@ -34,8 +34,8 @@ jobs:
       - *Versions
       - *Install
       - *Build
-      - *Test
       - *Lint
+      - *Test
 
   next:
     <<: *container
@@ -44,8 +44,8 @@ jobs:
       - *Versions
       - *Install
       - *Build
-      - *Test
       - *Lint
+      - *Test
 
   master:
     <<: *container
@@ -54,8 +54,8 @@ jobs:
       - *Versions
       - *Install
       - *Build
-      - *Test
       - *Lint
+      - *Test
 
 workflows:
   version: 2
