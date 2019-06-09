@@ -23,18 +23,25 @@
     <br />
   </sup>
   <br />
-  <h2>Install</h2>
-  Using npm:
-  <pre>npm i use-experiment</a></pre>
   <br />
-  Using yarn:
-  <pre>yarn add use-experiment</a></pre>
-  <br />
-  
 </div>
+<br />
+<br />
 
-<br />
-<br />
+## Install
+
+Using npm:
+
+```sh
+npm i use-experiment
+```
+
+or using yarn:
+
+```sh
+yarn add use-experiment
+```
+
 
 ## ```useExperiment()```
 
