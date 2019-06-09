@@ -23,8 +23,14 @@
     <br />
   </sup>
   <br />
-  <pre>yarn add <a href="https://yarnpkg.com/en/package/use-experiment">use-experiment</a></pre>
+  <h2>Install</h2>
+  Using npm:
+  <pre>npm i use-experiment</a></pre>
   <br />
+  Using yarn:
+  <pre>yarn add use-experiment</a></pre>
+  <br />
+  
 </div>
 
 <br />
