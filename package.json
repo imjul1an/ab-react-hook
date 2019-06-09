@@ -9,7 +9,7 @@
     "url": "git@github.com:ju1i4n/ab-react-hook.git"
   },
   "keywords": [],
-  "main": "src/index.js",
+  "main": "lib/index.js",
   "scripts": {
     "test": "jest",
     "test:watch": "jest --watch",
