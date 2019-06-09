@@ -24,7 +24,7 @@ refs:
     - &Test
       run:
         name: Test
-        command: yarn test --coverage && codecov
+        command: yarn test --coverage && yarn codecov
 
 jobs:
   all:
