@@ -1,24 +1,9 @@
 import crc32 from "fbjs/lib/crc32";
-
-export const NONE_VARIANT = "noneVariant";
-
-export interface Variant {
-  name: string;
-  weight: number;
-}
-
-export interface RandomizerOptions {
-  id: string;
-  name: string;
-  variants: Variant[];
-}
-
-export interface NoneVariant {
-  name: string;
-}
+import { NONE_VARIANT } from "./constants";
+import { ExperimentConfig, Variant } from "./interfaces";
 
 export const generateWeightedVariant = (
-  options: RandomizerOptions,
+  options: ExperimentConfig,
   logger: any = console
 ): Variant => {
   const { id, name, variants } = options;
@@ -34,7 +19,7 @@ export const generateWeightedVariant = (
       }.`
     );
 
-    return { name: NONE_VARIANT, weight: 0 };
+    return { name: NONE_VARIANT, weight: undefined };
   }
 
   const weightSum = variants.reduce((acc, variant) => acc + variant.weight, 0);
@@ -52,14 +37,13 @@ export const generateWeightedVariant = (
     logger.warn(
       `WARN: Your total variant weight is ${sign} than 100.` +
         " " +
-        "Please make sure your experiemnt configuration is correct."
+        "Make sure your experiemnt configuration is correct."
     );
 
-    return { name: NONE_VARIANT, weight: 0 };
+    return { name: NONE_VARIANT, weight: undefined };
   }
 
   const bucket = Math.abs(crc32(`${id}${name}`) % weightSum);
-
   const variant = findVariant(0, bucket, variants, logger);
 
   return { name: variant.name, weight: variant.weight };
@@ -71,12 +55,6 @@ const findVariant = (
   variants: Variant[],
   logger: any = console
 ): Variant => {
-  if (variants.length === 0) {
-    logger.warn("WARN: No variant found that is in the range of bucket size.");
-
-    return { name: NONE_VARIANT, weight: 0 };
-  }
-
   const variant = variants.shift() as Variant;
 
   return initialBucket < currentBucket + variant.weight || !variants.length
