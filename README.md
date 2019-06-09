@@ -11,14 +11,14 @@
   <sup>
     <br />
     <br />
-    <a href="https://www.npmjs.com/package/xhooks">
-      <img src="https://img.shields.io/npm/v/xhooks.svg" alt="npm package" />
+    <a href="https://www.npmjs.com/package/ab-react-hook">
+      <img src="https://img.shields.io/npm/v/ab-react-hook.svg" alt="npm package" />
     </a>
-    <a href="https://circleci.com/gh/ju1i4n/xhooks">
-      <img src="https://img.shields.io/circleci/project/ju1i4n/xhooks/master.svg" alt="CircleCI master" />
+    <a href="https://circleci.com/gh/ju1i4n/ab-react-hook">
+      <img src="https://img.shields.io/circleci/project/ju1i4n/ab-react-hook/master.svg" alt="CircleCI master" />
     </a>
-    <a href="https://codecov.io/gh/ju1i4n/xhooks">
-      <img src="https://codecov.io/gh/ju1i4n/xhooks/branch/master/graph/badge.svg" />
+    <a href="https://codecov.io/gh/ju1i4n/ab-react-hook">
+      <img src="https://codecov.io/gh/ju1i4n/ab-react-hook/branch/master/graph/badge.svg" />
     </a>
     <br />
   </sup>
@@ -33,13 +33,13 @@
 Using npm:
 
 ```sh
-npm i xhooks
+npm i ab-react-hook
 ```
 
 or using yarn:
 
 ```sh
-yarn add xhooks
+yarn add ab-react-hook
 ```
 
 
