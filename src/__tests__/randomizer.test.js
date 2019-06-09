@@ -2,7 +2,7 @@ import uuidv4 from "uuid/v4";
 
 import { generateWeightedVariant } from "../randomizer";
 
-describe("Randomization algorithm for weighted variants", () => {
+describe("Randomization algorithm for weighted variants:", () => {
   let n;
   beforeAll(() => {
     /*
@@ -115,6 +115,50 @@ describe("Randomization algorithm for weighted variants", () => {
 
       expect(isErrorRateLte1Precent).toBeTruthy();
     });
+  });
+
+  describe("return 'noneVariant' if configuration is wrong - only one variant provided.", () => {
+    let variant = generateWeightedVariant({
+      id: `${uuidv4()}`,
+      name: "experiment",
+      variants: [
+        {
+          name: "a",
+          weight: 50
+        }
+      ]
+    });
+
+    expect(variant).toEqual({ name: "noneVariant", weight: undefined });
+  });
+
+  describe("return 'noneVariant' if configuration is wrong - no variants provided.", () => {
+    let variant = generateWeightedVariant({
+      id: `${uuidv4()}`,
+      name: "experiment",
+      variants: [
+        {
+          name: "a",
+          weight: 50
+        },
+        {
+          name: "a",
+          weight: 51
+        }
+      ]
+    });
+
+    expect(variant).toEqual({ name: "noneVariant", weight: undefined });
+  });
+
+  describe("return 'noneVariant' if configuration is wrong - total sum of all weights != 100.", () => {
+    let variant = generateWeightedVariant({
+      id: `${uuidv4()}`,
+      name: "experiment",
+      variants: []
+    });
+
+    expect(variant).toEqual({ name: "noneVariant", weight: undefined });
   });
 });
 
