@@ -65,12 +65,10 @@ const AddToCartButtonExperiment = () => {
 }
 ```
 
-## ```useExperimentAsyc()``` (not implemented yet)
+## ```useExperimentAsyc()```
 ```js
 const AddToCartButtonExperiment = () => {
   const experimentConfig = {
-    id: "3143106098",
-    name: "add-to-cart-green",
     fetchVariant: () => {
       // let's assume we call our experiment API that returns variant.
       return new Promise((resolve, reject) => {
