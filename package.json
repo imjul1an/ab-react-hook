@@ -18,6 +18,9 @@
     "codecov": "codecov",
     "build": "rm -rf lib node_modules && yarn && tsc"
   },
+  "files": [
+    "lib/*"
+  ],
   "husky": {
     "hooks": {
       "pre-commit": "yarn lint",
