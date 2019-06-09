@@ -45,7 +45,7 @@ yarn add ab-react-hook
 
 ## ```useExperiment()```
 
-- Define experiment varaiants and weights:
+- Define experiment variants and weights:
 ```
 variants: [{
   name: "control", weight: 50 
