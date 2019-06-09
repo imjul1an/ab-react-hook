@@ -160,6 +160,35 @@ describe("Randomization algorithm for weighted variants:", () => {
 
     expect(variant).toEqual({ name: "noneVariant", weight: undefined });
   });
+
+  describe("given the same input, randomizer should always return deterministic result - same variant", () => {
+    const assignedVariantWithMultipleSessions = [];
+
+    for (let index = 0; index < 100; index++) {
+      let variant = generateWeightedVariant({
+        id: `user_id_123456789`,
+        name: "experiment",
+        variants: [
+          {
+            name: "test",
+            weight: 50
+          },
+          {
+            name: "control",
+            weight: 50
+          }
+        ]
+      });
+
+      assignedVariantWithMultipleSessions.push(variant);
+    }
+
+    const isVariantDeterministic = assignedVariantWithMultipleSessions.every(
+      ({ name, weight }) => name === "control" && weight === 50
+    );
+
+    expect(isVariantDeterministic).toBeTruthy();
+  });
 });
 
 const calcABVariantWeights = ({ weightA, weightB }, n) => {
