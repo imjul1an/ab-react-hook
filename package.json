@@ -1,12 +1,12 @@
 {
-  "name": "xhooks",
+  "name": "ab-react-hook",
   "version": "0.0.3",
   "description": "A/B-Testing React Hook",
   "author": "Julian Ustiyanovych",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git@github.com:ju1i4n/xhooks.git"
+    "url": "git@github.com:ju1i4n/ab-react-hook.git"
   },
   "keywords": [],
   "main": "src/index.js",
