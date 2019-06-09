@@ -45,8 +45,8 @@ yarn add ab-react-hook
 
 ## ```useExperiment()```
 
-1. Define experiment varaiants and weights: `variants: [{ name: "control", weight: 50 }, { name: "test", weight: 50 }]`
-2. Get the variant and send it to your analytics (google analytics, facebook analytics etc.), so you can aggregate results when running an experiment.
+- Define experiment varaiants and weights: `variants: [{ name: "control", weight: 50 }, { name: "test", weight: 50 }]`. You can define as many variants as you want, but it is recommended to keep *two* or max *three* variants for your experiment.
+- Get the variant and send it to your analytics (google analytics, facebook analytics etc.), so you can aggregate results when running an experiment.
 
 
 ```js
@@ -71,8 +71,8 @@ const AddToCartButtonExperiment = () => {
 
 ## ```useExperimentAsyc()```
 
-1. It assumes that you get a variant from your experiment service. Use `fetchVariant` and pass the api call there. It must return a result in the following form: `{ name: "control", weight: 50 }`. 
-2. Depending on your implementation, send the received variant back to the experiemnt service.
+- It assumes that you get a variant from your experiment service. Use `fetchVariant` and pass the api call there. It must return a result in the following form: `{ name: "control", weight: 50 }`. 
+- Depending on your implementation, send the received variant back to the experiemnt service.
 
 ```js
 const AddToCartButtonExperiment = () => {
