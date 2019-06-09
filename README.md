@@ -33,13 +33,13 @@
 Using npm:
 
 ```sh
-npm i use-experiment
+npm i xhooks
 ```
 
 or using yarn:
 
 ```sh
-yarn add use-experiment
+yarn add xhooks
 ```
 
 
