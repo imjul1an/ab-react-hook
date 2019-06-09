@@ -48,7 +48,7 @@ yarn add use-experiment
 ```js
 const AddToCartButtonExperiment = () => {
   const experimentConfig = {
-    id: "3143106098",
+    id: "3143106091",
     name: "add-to-cart-green",
     variants: [{ name: "control", weight: 50 }, { name: "test", weight: 50 }]
   };
