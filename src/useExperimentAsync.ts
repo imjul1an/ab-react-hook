@@ -12,13 +12,10 @@ export default function useExperimentAsyc(
   useEffect(() => {
     (async () => {
         try {
-
           setLoading(true);
           const { name, weight } = await asyncFn();
-
-          setLoading(false);
-
           setVariant({ name, weight });
+          setLoading(false);
         } catch (err) {
           logger.error(err);
           setLoading(false);
