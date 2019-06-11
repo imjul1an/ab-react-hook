@@ -68,13 +68,11 @@ const AddToCartButtonExperiment = () => {
  
   const { variant: { name } } = useExperiment(experimentConfig)
 
-  return (
-    if (name === "control") {
-       <button class="black">Add to cart</button>
-    } else if (name === "test") {
-       <button class="green">Add to cart</button>
-    }
-  )
+  if (name === "control") {
+     return <button class="black">Add to cart</button>;
+  } else if (name === "test") {
+     return <button class="green">Add to cart</button>;
+  }
 }
 ```
 
@@ -102,13 +100,11 @@ const AddToCartButtonExperiment = () => {
     return <LoadingSpinner />
   }
 
-  return (
-    if (name === "control") {
-       <button class="black">Add to cart</button>
-    } else if (name === "test") {
-       <button class="green">Add to cart</button>
-    }
-  )
+  if (name === "control") {
+    return <button class="black">Add to cart</button>;
+  } else if (name === "test") {
+    return <button class="green">Add to cart</button>;
+  }
 }
 ```
 
