@@ -43,7 +43,8 @@ yarn add ab-react-hook
 ```
 
 
-## ```useExperiment()```
+## ```useExperiment()```[![]https://img.shields.io/badge/demo-%20%20%20%F0%9F%9A%80-green.svg](https://codesandbox.io/embed/ab-react-hook-playground-4crjn)
+
 
 - Define experiment variants and weights:
 ```
@@ -117,3 +118,5 @@ const AddToCartButtonExperiment = () => {
 <p align="center">
   <a href="./LICENSE"><strong>Unlicense</strong></a> &mdash; public domain.
 </p>
+
+[img-demo]: https://img.shields.io/badge/demo-%20%20%20%F0%9F%9A%80-green.svg
