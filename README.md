@@ -78,10 +78,10 @@ const AddToCartButtonExperiment = () => {
 }
 ```
 
-## ```useExperimentAsyc()```
+## ```useExperimentAsync()```
 
 - It assumes that you get a variant from your experiment service. Use `fetchVariant` and pass the api call there. It must return a result in the following form: `{ name: "control", weight: 50 }`. 
-- Depending on your implementation, send the received variant back to the experiemnt service.
+- Depending on your implementation, send the received variant back to the experiment service.
 
 ```js
 const AddToCartButtonExperiment = () => {
