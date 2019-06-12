@@ -43,6 +43,11 @@ yarn add ab-react-hook
 ```
 
 
+## When should I use A/B tests?
+
+It's a very good question to ask before start doing A/B tests. The simple answer would be - when the **sample size is statistically significant** and you have a **good traffic**. To dig deeper into numbers use [powercalculator](https://bookingcom.github.io/powercalculator/) made by [booking](https://bookingcom.github.io) to understand **how long would** it take you to run an A/B test and get a statistically significant result.
+
+
 ## ```useExperiment()``` [![][img-demo]](https://codesandbox.io/embed/ab-react-hook-playground-4crjn)
 
 
