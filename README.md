@@ -80,37 +80,4 @@ const AddToCartButtonExperiment = () => {
   }
 }
 ```
-
-## ```useExperimentAsync()```
-
-- It assumes that you get a variant from your experiment service. Use `fetchVariant` and pass the api call there. It must return a result in the following form: `{ name: "control", weight: 50 }`. 
-- Depending on your implementation, send the received variant back to the experiment service.
-
-```js
-const AddToCartButtonExperiment = () => {
-  const experimentConfig = {
-    fetchVariant: () => {
-      // let's assume we call our experiment API that returns variant.
-      return new Promise((resolve, reject) => {
-        setTimeout(() => {
-          // shoud return an object of { name: string, weight: number }.
-          resolve({ name: "control", weight: 50 })
-        }, 2000)
-    })
-  }
- 
-  const { variant: { name }, isLoading } = useExperimentAsync(experimentConfig)
-  
-  if (isLoading) {
-    return <LoadingSpinner />
-  }
-
-  if (name === "control") {
-    return <button class="black">Add to cart</button>;
-  } else if (name === "test") {
-    return <button class="green">Add to cart</button>;
-  }
-}
-```
-
 [img-demo]: https://img.shields.io/badge/demo-%20%20%20%F0%9F%9A%80-green.svg
