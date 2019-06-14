@@ -10,6 +10,7 @@
   },
   "keywords": [],
   "main": "lib/index.js",
+  "types": "lib/index.d.ts",
   "scripts": {
     "test": "jest",
     "test:watch": "jest --watch",
