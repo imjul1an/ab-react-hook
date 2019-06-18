@@ -20,4 +20,5 @@ export interface ExperimentConfig {
   id: string;
   name: string;
   variants: Variant[];
+  enableForceExperiment?: boolean;
 }

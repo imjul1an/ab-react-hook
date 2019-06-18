@@ -7,6 +7,7 @@ export const generateWeightedVariant = (
   logger: any = console
 ): Variant => {
   const { id, name, variants } = options;
+
   if (variants.length < 2) {
     /*
      * ✅Experiment configuration check.
