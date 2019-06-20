@@ -38,12 +38,9 @@ const useExperiment = (
       return;
     }
 
-    let forcedExperiments;
-    let forcedVariant;
-
     if (enableForceExperiment) {
-      forcedExperiments = getBrowserQueryExperimentNames();
-      forcedVariant = forcedExperiments[name];
+      const forcedExperiments = getBrowserQueryExperimentNames();
+      const forcedVariant = forcedExperiments[name];
 
       if (forcedVariant) {
         setVariant({ name: forcedVariant, weight: undefined });

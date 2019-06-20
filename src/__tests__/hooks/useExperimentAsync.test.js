@@ -2,14 +2,14 @@ import { act, renderHook } from "react-hooks-testing-library";
 import useExperimentAsync from "../../useExperimentAsync";
 
 describe("useExperimentAsync", () => {
-  const variantFetch = () =>
+  const fetchVariantFulfilled = () =>
     new Promise(resolve => {
       setTimeout(() => {
         resolve("test");
       }, 500);
     });
 
-  const variantFetchError = () =>
+  const fetchVariantRejected = () =>
     new Promise((resolve, reject) => {
       setTimeout(() => {
         reject();
@@ -20,7 +20,12 @@ describe("useExperimentAsync", () => {
     let hook;
 
     act(() => {
-      hook = renderHook(() => useExperimentAsync(variantFetch));
+      hook = renderHook(() =>
+        useExperimentAsync({
+          name: "exp1",
+          fetchVariant: fetchVariantFulfilled
+        })
+      );
     });
 
     expect(hook.result.current.isLoading).toBeTruthy();
@@ -30,7 +35,12 @@ describe("useExperimentAsync", () => {
     let hook;
 
     act(() => {
-      hook = renderHook(() => useExperimentAsync(variantFetch));
+      hook = renderHook(() =>
+        useExperimentAsync({
+          name: "exp1",
+          fetchVariant: fetchVariantFulfilled
+        })
+      );
     });
 
     await hook.waitForNextUpdate();
@@ -42,7 +52,12 @@ describe("useExperimentAsync", () => {
     let hook;
 
     act(() => {
-      hook = renderHook(() => useExperimentAsync(variantFetch));
+      hook = renderHook(() =>
+        useExperimentAsync({
+          name: "exp1",
+          fetchVariant: fetchVariantFulfilled
+        })
+      );
     });
 
     await hook.waitForNextUpdate();
@@ -55,12 +70,40 @@ describe("useExperimentAsync", () => {
     let hook;
 
     act(() => {
-      hook = renderHook(() => useExperimentAsync(variantFetchError));
+      hook = renderHook(() =>
+        useExperimentAsync({
+          name: "exp1",
+          fetchVariant: fetchVariantRejected
+        })
+      );
     });
 
     await hook.waitForNextUpdate();
 
     expect(hook.result.current.isLoading).toBeFalsy();
     expect(hook.result.current.variant).toEqual("noneVariant");
+  });
+
+  it("fetch forced variant from the url", async () => {
+    jsdom.reconfigure({
+      url: "https://example.com?et=exp1:super_test"
+    });
+
+    let hook;
+
+    act(() => {
+      hook = renderHook(() =>
+        useExperimentAsync({
+          name: "exp1",
+          fetchVariant: fetchVariantFulfilled,
+          enableForceExperiment: true
+        })
+      );
+    });
+
+    await hook.waitForNextUpdate();
+
+    expect(hook.result.current.isLoading).toBeFalsy();
+    expect(hook.result.current.variant).toEqual("super_test");
   });
 });
