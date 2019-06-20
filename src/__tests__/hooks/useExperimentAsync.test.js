@@ -5,7 +5,7 @@ describe("useExperimentAsync", () => {
   const variantFetch = () =>
     new Promise(resolve => {
       setTimeout(() => {
-        resolve({ name: "test", weight: 60 });
+        resolve("test");
       }, 500);
     });
 
@@ -48,7 +48,7 @@ describe("useExperimentAsync", () => {
     await hook.waitForNextUpdate();
 
     expect(hook.result.current.isLoading).toBeFalsy();
-    expect(hook.result.current.variant).toEqual({ name: "test", weight: 60 });
+    expect(hook.result.current.variant).toEqual("test");
   });
 
   it("fetch variant with failure - reject", async () => {
@@ -61,9 +61,6 @@ describe("useExperimentAsync", () => {
     await hook.waitForNextUpdate();
 
     expect(hook.result.current.isLoading).toBeFalsy();
-    expect(hook.result.current.variant).toEqual({
-      name: "noneVariant",
-      weight: undefined
-    });
+    expect(hook.result.current.variant).toEqual("noneVariant");
   });
 });

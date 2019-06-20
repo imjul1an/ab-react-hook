@@ -75,14 +75,42 @@ const AddToCartButtonExperiment = () => {
     enableForceExperiment: true
   };
  
-  const { variant: { name } } = useExperiment(experimentConfig)
+  const variant = useExperiment(experimentConfig)
 
-  if (name === "control") {
+  if (variant.name === "control") {
      return <button class="black">Add to cart</button>;
-  } else if (name === "test") {
+  } else if (variant.name === "test") {
      return <button class="green">Add to cart</button>;
   }
 }
+```
+
+
+## ```useExperimentAsync()```
+
+```js
+const fetchVariant = () => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve("test");
+    }, 2000);
+  });
+}
+
+function AsyncAddToCartButtonExperiment() {
+  const { variant, isLoading } = useExperimentAsync(fetchVariant);
+
+  if (isLoading) {
+    return <div>loading...</div>;
+  }
+
+  if (variant.name === "control") {
+     return <button class="black">Add to cart</button>;
+  } else if (variant.name === "test") {
+     return <button class="green">Add to cart</button>;
+  }
+}
+
 ```
 
 ### Force experiment variant

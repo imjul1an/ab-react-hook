@@ -12,7 +12,7 @@ export interface ExperimentResult {
 }
 
 export interface ExperimentResultAsync {
-  variant: Variant;
+  variant: string;
   isLoading?: boolean;
 }
 
