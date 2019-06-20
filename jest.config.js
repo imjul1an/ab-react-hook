@@ -1,6 +1,6 @@
 module.exports = {
   moduleFileExtensions: ["ts", "js", "json"],
-  testEnvironment: "node",
+  testEnvironment: "jest-environment-jsdom-global",
   coverageThreshold: {
     global: {
       branches: 83,
