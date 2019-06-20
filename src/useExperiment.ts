@@ -1,18 +1,43 @@
 import { useEffect, useState } from "react";
 
-import { ExperimentConfig, ExperimentResult, Variant } from "./interfaces";
+import isEqual from "lodash.isequal";
+
+import usePrevious from "./usePrevious";
+
+import { ExperimentConfig, Variant } from "./interfaces";
 import { generateWeightedVariant } from "./randomizer";
 import { getBrowserQueryExperimentNames } from "./toggleExperiment";
 
 const useExperiment = (
   config: ExperimentConfig,
   logger: any = console,
-): ExperimentResult => {
+): Variant | undefined => {
+
+  const defaultVariant = {
+    name: undefined,
+    weight: undefined
+  } as Variant;
+
+  const [variant, setVariant] = useState<Variant>(defaultVariant);
+
   const { id, name, variants, enableForceExperiment } = config;
 
-  const [variant, setVariant] = useState<Variant>({ name: undefined, weight: undefined });
+  const prevConfig = usePrevious([ id, name, variants, enableForceExperiment ]);
+  const prevVariant = usePrevious([ variant ]);
 
   useEffect(() => {
+    if (
+      isEqual(prevConfig, [
+        id,
+        name,
+        variants,
+        enableForceExperiment
+      ]) &&
+      !isEqual(prevVariant, [defaultVariant])
+    ) {
+      return;
+    }
+
     let forcedExperiments;
     let forcedVariant;
 
@@ -36,9 +61,9 @@ const useExperiment = (
     );
 
     setVariant(variant);
-  }, [id, name, variants, logger, enableForceExperiment]);
+  });
 
-  return { variant };
+  return variant;
 };
 
 export default useExperiment;

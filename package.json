@@ -29,8 +29,10 @@
     }
   },
   "dependencies": {
+    "@types/lodash.isequal": "^4.5.5",
     "@types/url-parse": "^1.4.3",
     "fbjs": "1.0.0",
+    "lodash.isequal": "^4.5.0",
     "react": "16.8.6",
     "react-dom": "16.8.6",
     "url-parse": "^1.4.7",

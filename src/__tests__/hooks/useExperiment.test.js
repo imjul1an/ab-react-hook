@@ -15,7 +15,7 @@ describe("useExperiment", () => {
 
   it("should return weighted variant", () => {
     const hook = renderHook(() => useExperiment(experimentConfig));
-    const { variant } = hook.result.current;
+    const variant = hook.result.current;
 
     expect(variant).toEqual({ name: "control", weight: 99 });
   });
@@ -29,9 +29,7 @@ describe("useExperiment", () => {
       useExperiment({ ...experimentConfig, enableForceExperiment: true })
     );
 
-    const {
-      variant: { name }
-    } = hook.result.current;
+    const { name } = hook.result.current;
 
     expect(name).toEqual("test");
   });
@@ -45,9 +43,7 @@ describe("useExperiment", () => {
       useExperiment({ ...experimentConfig, enableForceExperiment: true })
     );
 
-    const {
-      variant: { name }
-    } = hook.result.current;
+    const { name } = hook.result.current;
 
     expect(name).toEqual("control");
   });
