@@ -15,20 +15,14 @@ export default function useExperimentAsync(
   useEffect(() => {
     if (enableForceExperiment) {
       (async () => {
-        try {
-          const forcedExperiments = getBrowserQueryExperimentNames();
-          const forcedVariant = await Promise.resolve(forcedExperiments[name]);
+        const forcedExperiments = getBrowserQueryExperimentNames();
+        const forcedVariant = await Promise.resolve(forcedExperiments[name]);
 
-          if (forcedVariant) {
-            setLoading(true);
-            setVariant(forcedVariant);
-            setLoading(false);
-            return;
-          }
-        } catch (err) {
-          logger.error(err);
+        if (forcedVariant) {
+          setLoading(true);
+          setVariant(forcedVariant);
           setLoading(false);
-          setVariant(NONE_VARIANT);
+          return;
         }
       })();
     }
