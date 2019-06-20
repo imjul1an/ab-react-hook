@@ -6,9 +6,10 @@ export interface Variant {
 export interface NoneVariant {
   name: string;
 }
-
-export interface ExperimentResult {
-  variant: Variant;
+export interface ExperimentConfigAsync {
+  name: string;
+  fetchVariant: (...args: any[] | []) => Promise<any>;
+  enableForceExperiment?: boolean;
 }
 
 export interface ExperimentResultAsync {

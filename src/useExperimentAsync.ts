@@ -1,28 +1,45 @@
 import { useEffect, useState } from "react";
 import { NONE_VARIANT } from "./constants";
-import { ExperimentResultAsync } from "./interfaces";
+import { ExperimentConfigAsync, ExperimentResultAsync } from "./interfaces";
+import { getBrowserQueryExperimentNames } from "./toggleExperiment";
 
-export default function useExperimentAsyc(
-  asyncFn: (...args: any[] | []) => Promise<any>,
+export default function useExperimentAsync(
+  config: ExperimentConfigAsync,
   logger: any = console
 ): ExperimentResultAsync {
   const [variant, setVariant] = useState<string>("");
   const [isLoading, setLoading] = useState<boolean>(false);
 
+  const { name, fetchVariant, enableForceExperiment } = config;
+
   useEffect(() => {
-    (async () => {
-        try {
+    if (enableForceExperiment) {
+      (async () => {
+        const forcedExperiments = getBrowserQueryExperimentNames();
+        const forcedVariant = await Promise.resolve(forcedExperiments[name]);
+
+        if (forcedVariant) {
           setLoading(true);
-          const variant = await asyncFn();
-          setVariant(variant);
+          setVariant(forcedVariant);
           setLoading(false);
-        } catch (err) {
-          logger.error(err);
-          setLoading(false);
-          setVariant(NONE_VARIANT);
+          return;
         }
       })();
-  }, [asyncFn, logger]);
+    }
+
+    (async () => {
+      try {
+        setLoading(true);
+        const variant = await fetchVariant();
+        setVariant(variant);
+        setLoading(false);
+      } catch (err) {
+        logger.error(err);
+        setLoading(false);
+        setVariant(NONE_VARIANT);
+      }
+    })();
+  }, [fetchVariant, enableForceExperiment, logger]);
 
   return { variant, isLoading };
 }

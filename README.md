@@ -98,7 +98,11 @@ const fetchVariant = () => {
 }
 
 function AsyncAddToCartButtonExperiment() {
-  const { variant, isLoading } = useExperimentAsync(fetchVariant);
+  const { variant, isLoading } = useExperimentAsync({
+    name: "exp1",
+    fetchVariant,
+    enableForceExperiment: true
+  });
 
   if (isLoading) {
     return <div>loading...</div>;
