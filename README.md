@@ -122,7 +122,7 @@ function AsyncAddToCartButtonExperiment() {
 If `enableForceExperiment` flag set to `true` you can seamlessly **test** all possible variants of the particular experiment without changing the code.
 
 
-To **force** experiment variant add query parameter with **experiment id** and the **variant_name**.
+To **force** experiment variant add query parameter with **experiment id** and the **variant name**.
 
 - Force single experiment variant:
 ```
