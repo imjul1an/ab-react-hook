@@ -72,6 +72,7 @@ const AddToCartButtonExperiment = () => {
     id: "3143106091",
     name: "add-to-cart-green",
     variants: [{ name: "control", weight: 50 }, { name: "test", weight: 50 }]
+    enableForceExperiment: true
   };
  
   const { variant: { name } } = useExperiment(experimentConfig)
@@ -83,4 +84,22 @@ const AddToCartButtonExperiment = () => {
   }
 }
 ```
+
+### Force experiment variant
+
+If `enableForceExperiment` flag set to `true` you can seamlessly **test** all possible variants of the particular experiment without changing the code.
+
+
+To **force** experiment variant add query parameter with **experiment id** and the **variant_name**.
+
+- Force single experiment variant:
+```
+/?et=exp_id:exp_variant
+```
+
+- Force multiple experiments:
+```
+/?et=exp_1:exp_variant_id,exp_2:exp_variant_id
+```
+
 [img-demo]: https://img.shields.io/badge/demo-%20%20%20%F0%9F%9A%80-green.svg
