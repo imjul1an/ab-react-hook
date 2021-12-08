@@ -14,11 +14,11 @@
     <a href="https://www.npmjs.com/package/ab-react-hook">
       <img src="https://img.shields.io/npm/v/ab-react-hook.svg" alt="npm package" />
     </a>
-    <a href="https://circleci.com/gh/ju1i4n/ab-react-hook">
-      <img src="https://img.shields.io/circleci/project/ju1i4n/ab-react-hook/master.svg" alt="CircleCI master" />
+    <a href="https://circleci.com/gh/imjul1an/ab-react-hook">
+      <img src="https://img.shields.io/circleci/project/imju1i4n/ab-react-hook/master.svg" alt="CircleCI master" />
     </a>
-    <a href="https://codecov.io/gh/ju1i4n/ab-react-hook">
-      <img src="https://codecov.io/gh/ju1i4n/ab-react-hook/branch/master/graph/badge.svg" />
+    <a href="https://codecov.io/gh/imju1i4n/ab-react-hook">
+      <img src="https://codecov.io/gh/imju1i4n/ab-react-hook/branch/master/graph/badge.svg" />
     </a>
     <a href="https://codesandbox.io/embed/ab-react-hook-playground-4crjn">
       <img src="https://img.shields.io/badge/demo-%20%20%20%F0%9F%9A%80-green.svg" />
